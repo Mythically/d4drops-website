@@ -1,0 +1,74 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px); /* apply the blur */
+  pointer-events: none; /* make the overlay click-through */
+  z-index: -1;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: no-repeat center center;
+  background-image: url('../../public/diablo-iv-lilith.png');
+  background-size: cover;
+  z-index: -1;
+  border: none;
+}
+
+
+
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-link {
+  color: #61dafb;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+}
+

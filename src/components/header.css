@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.header h1 {
+  flex: 1;
+  margin: 0;
+  padding-left: 2%;
+}
+
+.header a {
+  margin-left: auto;
+margin-right: 2%;
+}
+.link {
+    font-size: 30px;
+    color: black;
+  }
