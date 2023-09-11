@@ -8,17 +8,15 @@ function ImageUpload() {
   const [dragging, setDragging] = useState(false);
   const [processing, setProcessing] = useState(false);
 
-  useEffect(() => {
-    console.log("useEffect");
-    console.log(files);
-    console.log(files.length);
-  }, [files]);
+  // useEffect(() => {
+  //   console.log("useEffect");
+  //   console.log(files);
+  //   console.log(files.length);
+  // }, [files]);
 
   const handleFileChange = (event) => {
     console.log("change");
-    // console.log(event.target.files + "target")
     setFiles([...files, ...event.target.files]);
-    handleProcessImages();
   };
 
   const handleDrop = (event) => {
@@ -30,7 +28,7 @@ function ImageUpload() {
     setFiles([...files, ...event.dataTransfer.files]);
     console.log(files);
     setDragging(false);
-    handleProcessImages();
+    // handleProcessImages();
   };
 
   const handleDragOver = (event) => {
@@ -68,7 +66,7 @@ function ImageUpload() {
     const workerPromises = Array.from({ length: 2 }, async () => {
       const worker = await Tesseract.createWorker({
         logger: ({ progress, userJobId, progressId }) => {
-          console.log(`progress: ${progress}`);
+          // console.log(`progress: ${progress}`);
         },
       });
       await worker.loadLanguage("eng");
@@ -102,7 +100,8 @@ function ImageUpload() {
 
   useEffect(() => {
     handleProcessImages();
-  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [files]);
 
   return (
     <div className={"drop-area-div"}>
